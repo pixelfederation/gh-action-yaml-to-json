@@ -18,7 +18,7 @@ export async function readYamlValuesFile(directory:string, valuesFilePath: strin
     valuesYaml.split(/\r?\n/).forEach(line =>  {
       //check if there is a hash and not hash as string with single and double quotes
       if(line.includes('#') && !(new RegExp('".*#.*"','')).test(line) && !(new RegExp("'.*#.*'","")).test(line) ) {
-          line = line.replaceAll(new RegExp("#.*$", "g"), "");
+          line = line.replace(new RegExp("#.*$", "g"), "");
       }
       //maybe remove all empty line
       valuesYamlParsed+= `${line}\n`;

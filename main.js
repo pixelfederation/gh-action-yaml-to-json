@@ -8762,7 +8762,7 @@ async function readYamlValuesFile(directory, valuesFilePath) {
   let valuesYamlParsed = "";
   valuesYaml.split(/\r?\n/).forEach((line) => {
     if (line.includes("#") && !new RegExp('".*#.*"', "").test(line) && !new RegExp("'.*#.*'", "").test(line)) {
-      line = line.replaceAll(new RegExp("#.*$", "g"), "");
+      line = line.replace(new RegExp("#.*$", "g"), "");
     }
     valuesYamlParsed += `${line}
 `;
