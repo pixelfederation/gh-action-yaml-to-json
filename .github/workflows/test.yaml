@@ -27,14 +27,13 @@ jobs:
           validate_keys: |
             $.service.port
             $.service.type
-            $.buildLabels
             $.ingress.external
 
       - name: print value
         run:
-          echo "${{ fromJSON(steps.myyaml.outputs.content).service.port }}"
+          echo "EXTRACTED ${{ fromJSON(steps.myyaml.outputs.content).service.port }}"
 
       - name: print array value
         run:
-          echo "${{ fromJSON(steps.myyaml.outputs.content).jobs[2].name }}"
+          echo "EXTRACTED ${{ fromJSON(steps.myyaml.outputs.content).jobs[2].name }}"
 
