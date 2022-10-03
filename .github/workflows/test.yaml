@@ -1,0 +1,40 @@
+name: Main workflow
+
+on:
+  - pull_request
+  - push
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: test yaml
+        id: myyaml
+        uses: ./
+        with:
+          file: testfile.yaml
+          directory: tests
+          validate_keys: |
+            $.service.port
+            $.service.type
+            $.buildLabels
+            $.ingress.external
+
+      - name: print value
+        run:
+          echo "${{ fromJSON(steps.myyaml.outputs.content).service.port }}"
+
+      - name: print array value
+        run:
+          echo "${{ fromJSON(steps.myyaml.outputs.content).jobs[2].name }}"
+

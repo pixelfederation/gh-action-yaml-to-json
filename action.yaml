@@ -1,0 +1,20 @@
+name: Yaml To Json
+description: Convert yaml to json and validate
+author: Tomas Hulata <thulata@pixelfederation.com>
+runs:
+  using: node12
+  main: main.js
+inputs:
+  file:
+    description: yaml input file
+    required: true
+  directory:
+    description: Working directory
+    required: false
+    default: "."
+  validate_keys:
+    description: Validate yaml keys with json path
+    required: false
+outputs:
+  content:
+    description: data
