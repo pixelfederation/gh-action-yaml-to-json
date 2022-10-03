@@ -8783,8 +8783,14 @@ async function readYamlValuesFile(directory, valuesFilePath) {
     const json = await readYamlValuesFile(dir, file);
     let failed = false;
     for (const key of validate_keys) {
-      const result = import_jsonpath_plus.JSONPath({path: key, json});
-      if (result.length == 0) {
+      const results = import_jsonpath_plus.JSONPath({path: key, json});
+      for (const res of results) {
+        if (!res) {
+          core.setFailed(`Validating faild on key '${key}'`);
+          break;
+        }
+      }
+      if (results.length == 0) {
         failed = true;
         core.setFailed(`Validating faild on key '${key}'`);
         break;

@@ -40,8 +40,14 @@ export async function readYamlValuesFile(directory:string, valuesFilePath: strin
     const json = await readYamlValuesFile(dir, file);
     let failed: boolean = false
     for (const key of validate_keys) {
-        const result = JSONPath({path: key, json});
-        if(result.length == 0) {
+        const results = JSONPath({path: key, json});
+        for (const res of results) {
+            if (!res) {
+                core.setFailed(`Validating faild on key '${key}'`);
+                break
+            }
+        }
+        if(results.length == 0) {
             failed = true
             core.setFailed(`Validating faild on key '${key}'`);
             break
