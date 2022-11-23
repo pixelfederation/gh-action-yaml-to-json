@@ -1,8 +1,8 @@
 {
-  "name": "@pixelfederation/yaml-to-json",
+  "name": "@pixelfederation/gh-action-yaml-to-json",
   "version": "1.0.0",
   "description": "yaml to json and validate",
-  "repository": "https://github.com/pixelfederation/yaml-to-json",
+  "repository": "https://github.com/pixelfederation/gh-action-yaml-to-json",
   "author": "Tomas Hulata <thulata@pixelfederation.com>",
   "license": "MIT",
   "scripts": {
