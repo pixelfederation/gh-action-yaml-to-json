@@ -1,8 +1,8 @@
 {
-  "name": "@pixelfederation/yaml-to-json",
+  "name": "@pixelfederation/gh-action-yaml-to-json",
   "version": "1.0.0",
   "description": "yaml to json and validate",
-  "repository": "https://github.com/pixelfederation/yaml-to-json",
+  "repository": "https://github.com/pixelfederation/gh-action-yaml-to-json",
   "author": "Tomas Hulata <thulata@pixelfederation.com>",
   "license": "MIT",
   "scripts": {
@@ -10,10 +10,10 @@
     "fmt:check": "prettier --check .",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.ts\" --cache",
-    "build": "esbuild src/main.ts --bundle --outdir=. --target=node12 --platform=node"
+    "build": "esbuild src/main.ts --bundle --outdir=. --target=node16 --platform=node"
   },
   "dependencies": {
-    "@actions/core": "1.8.2",
+    "@actions/core": "1.10.0",
     "@actions/exec": "1.0.4",
     "@actions/github": "4.0.0",
     "@actions/io": "1.0.2",
