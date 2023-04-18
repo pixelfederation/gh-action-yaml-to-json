@@ -16,7 +16,7 @@
     "@actions/core": "1.10.0",
     "@actions/exec": "1.0.4",
     "@actions/github": "4.0.0",
-    "@actions/io": "1.0.2",
+    "@actions/io": "1.1.3",
     "@kubectl/actions": "pixelfederation/gh-action-kubectl#main",
     "jsonpath-plus": "^7.2.0",
     "yaml": "^2.1.1"
