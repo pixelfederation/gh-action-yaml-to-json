@@ -30,10 +30,7 @@ jobs:
             $.ingress.external
 
       - name: print value
-        run:
-          echo "EXTRACTED ${{ fromJSON(steps.myyaml.outputs.content).service.port }}"
+        run: echo "EXTRACTED ${{ fromJSON(steps.myyaml.outputs.content).service.port }}"
 
       - name: print array value
-        run:
-          echo "EXTRACTED ${{ fromJSON(steps.myyaml.outputs.content).jobs[2].name }}"
-
+        run: echo "EXTRACTED ${{ fromJSON(steps.myyaml.outputs.content).jobs[2].name }}"

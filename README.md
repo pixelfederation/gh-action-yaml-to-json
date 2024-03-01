@@ -1,4 +1,5 @@
 usage:
+
 ```yaml
       - name: test yaml
         id: myyaml
@@ -21,4 +22,5 @@ usage:
         run:
           echo "EXTRACTED ${{ fromJSON(steps.myyaml.outputs.content).jobs[2].name }}"
 ```
+
 json path validation syntax [docs](https://www.npmjs.com/package/jsonpath#user-content-jsonpath-syntax)

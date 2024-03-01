@@ -31,7 +31,6 @@ ingress:
     #       - app.example.com
     #
 jobs:
-- name: job-foo
-- name: job-bar
-- name: "testing hash# in middle"
-
+  - name: job-foo
+  - name: job-bar
+  - name: "testing hash# in middle"
